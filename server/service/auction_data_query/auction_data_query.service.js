@@ -13,11 +13,18 @@
 'use strict';
 
 var _ = require('lodash');
-var AuctionDataQuery = require('./auction_data_query.model');
-var config = require('../../config/local.env');
+
+var mongoose = require('mongoose');
+var AuctionDataQuerySchema = require('./auction_data_query.model.js');
+var AuctionDataQuery = mongoose.model('AuctionDataQuery', AuctionDataQuerySchema);
+var config = require('../../config/local.env.js');
+var moment = require('moment');
+var request = require('request');
 var API_KEY;
+var bnet;
 try {
     API_KEY = config.BATTLENET_API_KEY;
+    bnet = require('battlenet-api')(API_KEY);
 } catch(e) {
     console.error("Api Key is required in local.env")
 }
@@ -25,9 +32,45 @@ try {
 var intervalSeconds = config.AH_DATA_INTERVAL || 600;
 
 
-setInterval(function(){
-  console.log("Scheduled job executed");
-}, intervalSeconds * 1000);
+var intervalFunction = function(){
+   console.log("Scheduled job executed");
+   retrieveAHData();
+}
+
+var retrieveAHData = function(realm){
+  bnet.wow.auction({origin: 'us', realm: 'aerie-peak'}, function(err, response){
+    if(err) {
+        console.error("Could not retrieve AH data");
+    }
+    var urlToGrabDataFrom = response.files[0].url;
+    var lastModified = response.files[0].lastModified;
+
+    console.log("Url To Grab Data From: " + urlToGrabDataFrom);
+    console.log("Last modified: " +   new moment(lastModified,'yyyyMMddHHmmssfff').toDate());
+
+    request(urlToGrabDataFrom, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+
+       var auctions = JSON.parse(body);
+        var auctionData =   new AuctionDataQuery({
+          realmName: "aerie-peak",
+          auctions: auctions.auctions.auctions,
+          queryDate: new moment()
+        })
+        auctionData.save(function(err){
+          if(err) {
+            console.error(err);
+          }
+          console.log("Saved " + auctionData.auctions.length + " auctions from '" + auctionData.realmName + "' on " + auctionData.queryDate);
+        });
+      } else {
+        console.error(error);
+      }
+    })
+  });
+};
+
+setInterval(intervalFunction, intervalSeconds * 1000);
 
 
 
