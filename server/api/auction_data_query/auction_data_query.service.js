@@ -22,17 +22,14 @@ try {
     console.error("Api Key is required in local.env")
 }
 
-var intervalSeconds = config.timeBetweenAuctionHouseDataQueryInSeconds || 10;
+var intervalSeconds = config.AH_DATA_INTERVAL || 600;
 
 
 setInterval(function(){
   console.log("Scheduled job executed");
-}, intervalSeconds * 1000)
+}, intervalSeconds * 1000);
 
 
-exports.query = function() {
-
-}
 
 // Get list of things
 //exports.index = function(req, res) {

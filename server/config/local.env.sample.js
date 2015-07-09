@@ -6,9 +6,10 @@
 // You will need to set these on the server you deploy to.
 
 module.exports = {
-  DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'auctionnotifier-secret',
-
+  DOMAIN: 'http://localhost:9000',
+  SESSION_SECRET: "auctionnotifier-secret",
+  BATTLENET_API_KEY: "",
+  AH_DATA_INTERVAL: 30, // In Seconds
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };
