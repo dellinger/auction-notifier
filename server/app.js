@@ -1,4 +1,5 @@
 ///<reference path="..\typings\node\node.d.ts"/>
+///<reference path="..\typings\express\express.d.ts"/>
 /**
  * Main application file
  */
@@ -14,12 +15,12 @@ mongoose.connect(config.mongo.uri, config.mongo.options);
 if (config.seedDB) {
     require('./config/seed');
 }
-// Setup server
+// Setup server.
 var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
-require('./api/auction_data_query/auction_data_query.service.ts');
+//require('./api/auction_data_query/auction_data_query.service.ts');
 // Start server
 server.listen(config.port, config.ip, function () {
     console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
