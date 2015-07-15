@@ -55,7 +55,8 @@ var dme;
                         if (err) {
                             console.error(err);
                         }
-                        console.log("Saved " + auctionData.auctions.length + " auctions from '" + auctionData.realmName + "' on " + auctionData.queryDate);
+                        console.log("Saved " + auctionData.auctions.length + " auctions from '" + auctionData.realmName
+                            + "' on " + auctionData.queryDate);
                     });
                 };
                 try {
@@ -75,4 +76,3 @@ var dme;
         auctiondata.AuctionDataQueryService = AuctionDataQueryService;
     })(auctiondata = dme.auctiondata || (dme.auctiondata = {}));
 })(dme || (dme = {}));
-//# sourceMappingURL=auction_data_query.service.js.map

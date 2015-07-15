@@ -1,4 +1,4 @@
-module dme.auctiondata {
+  module dme.auctiondata {
 
     export class Auction_Query {
         realmName: string;

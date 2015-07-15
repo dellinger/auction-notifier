@@ -16,4 +16,3 @@ var dme;
         auctiondata.Auction = Auction;
     })(auctiondata = dme.auctiondata || (dme.auctiondata = {}));
 })(dme || (dme = {}));
-//# sourceMappingURL=Auction.model.js.map

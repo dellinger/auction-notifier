@@ -20,6 +20,7 @@ module.exports = function (grunt) {
     buildcontrol: 'grunt-build-control'
   });
 
+  grunt.loadNpmTasks("grunt-ts");
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -52,69 +53,6 @@ module.exports = function (grunt) {
     open: {
       server: {
         url: 'http://localhost:<%= express.options.port %>'
-      }
-    },
-    watch: {
-      injectJS: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.js',
-          '!<%= yeoman.client %>/{app,components}/**/*.spec.js',
-          '!<%= yeoman.client %>/{app,components}/**/*.mock.js',
-          '!<%= yeoman.client %>/app/app.ts'],
-        tasks: ['injector:scripts']
-      },
-      injectCss: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
-        ],
-        tasks: ['injector:css']
-      },
-      mochaTest: {
-        files: ['server/**/*.spec.js'],
-        tasks: ['env:test', 'mochaTest']
-      },
-      jsTest: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.spec.js',
-          '<%= yeoman.client %>/{app,components}/**/*.mock.js'
-        ],
-        tasks: ['karma']
-      },
-      injectSass: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
-        tasks: ['injector:sass']
-      },
-      sass: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
-        tasks: ['sass', 'autoprefixer']
-      },
-      gruntfile: {
-        files: ['Gruntfile.js']
-      },
-      livereload: {
-        files: [
-          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
-          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
-          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
-          '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
-          '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
-          '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
-        ],
-        options: {
-          livereload: true
-        }
-      },
-      express: {
-        files: [
-          'server/**/*.{js,json}'
-        ],
-        tasks: ['express:dev', 'wait'],
-        options: {
-          livereload: true,
-          nospawn: true //Without this option specified express won't be reloaded
-        }
       }
     },
 
@@ -507,8 +445,18 @@ module.exports = function (grunt) {
           ]
         }
       }
+
+
     },
+    // Compile typescript
+    ts: {
+      default : {
+        src: ["**/*.ts", "!node_modules/**/*.ts","!typings/**/*.ts", "!client/bower_components/**/*.ts", "!dist/**/*.ts", "!typings/node/node.d.ts"]
+      }
+    }
   });
+
+  grunt.registerTask("ts-compile", ["ts"]);
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -555,7 +503,6 @@ module.exports = function (grunt) {
       'express:dev',
       'wait',
       'open',
-      'watch'
     ]);
   });
 
