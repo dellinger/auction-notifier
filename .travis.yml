@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.11'
+- '0.10'
+- '0.11'
 before_script:
-  - npm install -g bower gulp
-  - gem install sass
-  - bower install
+- npm install -g bower gulp
+- gem install sass
+- bower install
 script: gulp build
+deploy:
+  provider: heroku
+  api_key:
+    secure: eOswFfnmY3nyDlCSLHcLYvN4QvfYlCwJqRlhnegvg371mZOkGeOWnkNOEcu+XitCMx0fiBnwNFgmIDxuQrMYasOAuzZZkNUhcyBeJ3TPlFtU0PYJ9KIFSgc7K3Q6qs5zWTGUtsXybdSJnveB6P5ZNc1aSoqW8TKY6rqZ3c2hmR+c8lQ3XHFtV/qqLnaTTf5WVXWcgxC6gvRrrOmvfXE+tDt5EHZ9gZ74xMywB0wtcYiQiKNDcoM91kKOyLnUBc22iWd0bdopuUmDFYvef5P/CjPsr4y/O9oxCDoRCEKsLC74vnnx7xHpn4Fn+P76m+1EfAodg2zCfJ+GBYVaMu5eMxXzDmKTPyiPk0LOPhDLI4gHfGSSjq/v72pC8i+01jCflATKqqxfSFp4RZF7UT6PJlUJ7rpvJzSf5GHR1lWbqgt0CfA1JheSq9C565nKBc032U+cV7zGczFTU4EUWlSazK054L3+g841Sxgdq24bf7AScuwRYxKl6K+PFZLj0lzO8No0bVX0luDVxls0OAJolK8+XMSUUpwB1pv97yB7zK1efVpO3bq1gMPuADR5LbCvk1d04w+941CFNR5vdmhxtRuXKoQb2xIM09kAODrQWwrsWzEWXVGzE3vmHU7SW3kENePEboBQuiZ53MfJnSlEEzJWBWCbO+kKZnI0mkJWeuY=
+  app: infinite-sierra-7821
+  on:
+    repo: dellinger/auction-notifier
+    branch: master
