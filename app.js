@@ -8,8 +8,8 @@ var bodyParser = require('body-parser');
 var dotenv = require('dotenv').config({path: 'config/.env'});;
 //dotenv.load();
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./routes/index');
+var auctions = require('./routes/auction_routes');
 
 var app = express();
 
@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('connect-livereload')());
-app.use('/', routes);
-app.use('/users', users);
+app.use('/auctions', auctions);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
