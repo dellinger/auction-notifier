@@ -28,7 +28,7 @@ gulp.task('serve', function() {
 });
 
 
-gulp.task('default', ['lint','watch']);
-gulp.task('build', ['lint']);
-gulp.task('server',['serve']);
+gulp.task('default', ['hint','watch']);
+gulp.task('build', ['hint']);
+gulp.task('server',['hint','serve']);
  
