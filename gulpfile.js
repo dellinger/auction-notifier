@@ -2,9 +2,9 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var gls = require('gulp-live-server');
 
-// Lint Task
-gulp.task('lint', function() {
-    return gulp.src(['./routes/*.js','./public/javascripts/**/*.js'])
+// Hint Task
+gulp.task('hint', function() {
+    return gulp.src(['./routes/*.js','./api/**/*.js','./public/javascripts/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });

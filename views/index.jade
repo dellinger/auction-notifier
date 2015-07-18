@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p This is a Jade Template.Welcome to #{title}
+  .jumbotron
+    h1= title
+    p Auction House Queries
+  #auctions
+    for auction in auctions
+      p= JSON.stringify(auction)
+      hr
