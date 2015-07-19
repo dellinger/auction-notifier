@@ -3,6 +3,10 @@ extends layout
 block content
   div.jumbotron(ng-controller="ahQueryCtrl")
     p {{test}}
+    hr
+    p Realm: {{realmName}}
+    include auction_table.jade
+    
 //    h1= title
 //    p Auction House Queries
 //  #auctions

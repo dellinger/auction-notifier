@@ -3,11 +3,18 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.3.3/ng-table.css')
     
+    
+    script(type='text/javascript' src="https://code.jquery.com/jquery-2.1.4.js")
     script(type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js")
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-resource.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.3.3/ng-table.js')
+    script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.js')
     script(type='text/javascript' src='/javascripts/app.js')
+    script(type='text/javascript' src='/javascripts/auction_resource.js')
   body(ng-app='ahNotifier')
     block content

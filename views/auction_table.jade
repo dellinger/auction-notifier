@@ -1,0 +1,10 @@
+table(ng-table="tableParams")
+  tr(ng-repeat="auction in auctions")
+    td(data-title="'Auc'") {{auction.auc}}
+    td(data-title="'Owner'") {{auction.owner}}
+    td(data-title="'Owner Realm'") {{auction.ownerRealm}}
+    td(data-title="'item number'") {{auction.item}}
+    td(data-title="'bid'") {{auction.bid}}
+    td(data-title="'buyout'") {{auction.buyout}}
+    td(data-title="'quantity'") {{auction.quantity}}
+    td(data-title="'Time Left'") {{auction.timeLeft}}

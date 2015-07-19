@@ -10,7 +10,6 @@ router.get('/auctions', function(req, res, next) {
       }
       res.send(auctions);
   });
-
 });
 
 module.exports = router;
