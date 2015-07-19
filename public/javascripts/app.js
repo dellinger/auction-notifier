@@ -1,6 +1,6 @@
-var app = angular.module('ahNotifier', ['ngResource','ngTable']);
+var app = angular.module('ahNotifier', ['ngTable','ahNotifier.resource'])
 
-app.controller('ahQueryCtrl', ['$scope','Auctions','ngTableParams', function($scope,Auctions,ngTableParams){
+.controller('ahQueryCtrl', ['$scope','Auctions','ngTableParams', function($scope,Auctions,ngTableParams){
   $scope.realmName = '';
   $scope.auctions = {};
   $scope.tableParams = null;
@@ -13,14 +13,6 @@ app.controller('ahQueryCtrl', ['$scope','Auctions','ngTableParams', function($sc
                            $defer.resolve(normalizedAuctions);
                          }
                });
-  });
-
-
-
-
-  var auctions = Auctions.get(function(one,two){
-    $scope.realmName = one.realm.name;
-    $scope.auctions = one.auctions.auctions;
   });
 
   $scope.test = 'Hello world!';
