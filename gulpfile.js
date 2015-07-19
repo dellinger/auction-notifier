@@ -22,7 +22,7 @@ gulp.task('serve', function() {
     server.start();
 
     //use gulp.watch to trigger server actions(notify, start or stop)
-    gulp.watch(['styles/**/*.css', 'views/**/*.jade'], function () {
+    gulp.watch(['styles/**/*.css', 'views/**/*.jade','public/**/*.js'], function () {
         server.notify.apply(server, arguments);
     });
 });
