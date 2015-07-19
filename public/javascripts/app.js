@@ -3,7 +3,7 @@ var app = angular.module('ahNotifier', ['ngResource','ngTable']);
 app.controller('ahQueryCtrl', ['$scope','Auctions','ngTableParams', function($scope,Auctions,ngTableParams){
   $scope.realmName = '';
   $scope.auctions = {};
-  $scope.tableParams;
+  $scope.tableParams = null;
   Auctions.get(function(auctions){
      var normalizedAuctions = auctions.auctions.auctions;
       $scope.tableParams = new ngTableParams(
