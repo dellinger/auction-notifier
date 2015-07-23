@@ -1,10 +1,25 @@
-table(ng-table="tableParams")
-  tr(ng-repeat="auction in auctions")
-    td(data-title="'Auc'") {{auction.auc}}
-    td(data-title="'Owner'") {{auction.owner}}
-    td(data-title="'Owner Realm'") {{auction.ownerRealm}}
-    td(data-title="'item number'") {{auction.item}}
-    td(data-title="'bid'") {{auction.bid}}
-    td(data-title="'buyout'") {{auction.buyout}}
-    td(data-title="'quantity'") {{auction.quantity}}
-    td(data-title="'Time Left'") {{auction.timeLeft}}
+table(st-table="auctions").table.table-striped
+  thead
+    tr
+      th Auc
+      th Owner
+      th Owner Realm
+      th Item number
+      th bid
+      th buyout
+      th quantity
+      th Time Left
+  tbody
+    tr(ng-repeat="auction in auctions")
+      td {{auction.auc}}
+      td {{auction.owner}}
+      td {{auction.ownerRealm}}
+      td {{auction.item}}
+      td {{auction.bid}}
+      td {{auction.buyout}}
+      td {{auction.quantity}}
+      td {{auction.timeLeft}}
+  tfoot
+    tr
+      td(colspan="5").text-center
+        div(st-pagination="" st-items-by-page=15 st-displayed-pages=5) 
