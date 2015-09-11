@@ -4,8 +4,9 @@ angular.module('ahNotifier', ['ngResource','smart-table'])
   $scope.realmName = '';
   $scope.auctions = [];
   Auctions.query(function(auctions){
-     $scope.auctions = auctions.auctions.auctions;
+     $scope.auctions = auctions.auctions;
+     $scope.realm = auctions.realms[0];
   });
 
-  $scope.test = 'Hello world!';
+  $scope.test = 'Auction House Data';
 }]);

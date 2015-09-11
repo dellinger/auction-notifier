@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Load environment variables
-var dotenv = require('dotenv').config({path: 'config/.env'});;
-//dotenv.load();
+var dotenv = require('dotenv').config({path: 'config/.env'});
 
 var index = require('./routes/index');
 var auctions = require('./routes/auction_routes');
@@ -24,6 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/', index);
 app.use('/api', auctions);
 
