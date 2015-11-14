@@ -19,5 +19,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-tsd": "0.0.4"
+  },
+  "dependencies": {
+    "config": "^1.16.0"
   }
 }
