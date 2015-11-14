@@ -21,6 +21,8 @@
     "gulp-tsd": "0.0.4"
   },
   "dependencies": {
-    "config": "^1.16.0"
+    "config": "^1.16.0",
+    "koa": "^2.0.0-alpha.3",
+    "restify": "^4.0.3"
   }
 }

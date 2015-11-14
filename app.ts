@@ -1,11 +1,18 @@
 /// <reference path="./typings/tsd.d.ts"/>
-import * as http from "http"
+/// <reference path="./controllers/AhQueryController.ts"/>
+
+import {AhQueryController} from "./controllers/AhQueryController";
+
+var restify = require('restify');
+var server = restify.createServer();
+
+server.use(restify.acceptParser(server.acceptable));
+server.use(restify.queryParser());
+server.use(restify.bodyParser());
+
+server.listen(3000, () => {
+  console.log("Server started @ 3000");
+});
 
 
-
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
-
-console.log('Server running at http://127.0.0.1:1337/');
+server.get("/products", AhQueryController.get);

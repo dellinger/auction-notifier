@@ -1,6 +1,16 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "sourceMap": true
-    }
+        "sourceMap": true,
+        "module" : "commonjs"
+    },
+    "files": [
+        "app.ts",
+        "controllers/**/*.ts",
+        "typings/tsd.d.ts",
+        "typings/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+
 }
