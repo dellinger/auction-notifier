@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var tsd = require('gulp-tsd');
 var ts = require('gulp-typescript');
 var tsProject = ts.createProject('tsconfig.json');
-gulp.task('default', function() {
-  // place code for your default task here
+
+gulp.task('build', ['tsd', 'scripts'], function(cb) {
 });
 
 gulp.task('tsd', function (callback) {

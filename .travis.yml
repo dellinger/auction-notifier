@@ -3,5 +3,5 @@ node_js:
 - stable
 before_script:
 - npm install -g gulp
-script: gulp scripts
+script: gulp build
 
