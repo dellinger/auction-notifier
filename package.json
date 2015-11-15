@@ -22,9 +22,17 @@
   },
   "dependencies": {
     "battlenet-api": "^0.11.0",
+    "bookshelf": "^0.9.1",
     "config": "^1.16.0",
+    "gulp-typescript": "^2.9.2",
+    "knex": "^0.9.0",
     "koa": "^2.0.0-alpha.3",
+    "mongoose": "^4.2.5",
     "nconf": "^0.8.2",
-    "restify": "^4.0.3"
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "restify": "^4.0.3",
+    "sequelize": "^3.13.0",
+    "sqlite3": "^3.1.1"
   }
 }

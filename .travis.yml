@@ -2,10 +2,8 @@ language: node_js
 node_js:
 - stable
 before_script:
-- npm install -g bower gulp
-- gem install sass
-- bower install
-script: gulp build
+- npm install -g gulp
+script: gulp scripts
 deploy:
   provider: heroku
   api_key:

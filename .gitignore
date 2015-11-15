@@ -4,6 +4,10 @@
 logs
 *.log
 
+# Ignore js files
+/**/*.js
+/**/*.js.map
+
 # Runtime data
 pids
 *.pid

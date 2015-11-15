@@ -1,16 +1,24 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
-        "module" : "commonjs"
+        "module" : "commonjs",
+        "sourceMap": true
     },
     "files": [
-        "server.ts",
-        "controllers/**/*.ts",
-        "typings/tsd.d.ts",
-        "typings/**/*.d.ts"
+        "config/config.ts",
+        "server/controllers/AhQueryController.ts",
+        "server/models/AuctionQuery.ts",
+        "server/models/IAuctionQuery.ts",
+        "server/models/IRealms.ts",
+        "server/models/IAuction.ts",
+        "server/models/IAuctionQueryResult.ts",
+        "server/models/AuctionQueryResult.ts",
+        "server/models/IAuctionQueryFiles.ts",
+        "server/services/AuctionQuerySvc.ts",
+        "server.ts"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "typings"
     ]
 
 }
