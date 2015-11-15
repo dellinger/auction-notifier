@@ -19,6 +19,10 @@ server.listen(3000, () => {
   console.log("Server started @ 3000");
 });
 
+server.get('/', (req, res, next) => {
+    res.send("Server is online.");
+    next();
+});
 
 
 mongoose.connect(config.get('db_uri'),{}, function(one){

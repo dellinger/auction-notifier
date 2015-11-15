@@ -6,6 +6,7 @@ logs
 
 # Ignore js files
 /**/*.js
+/dist
 /**/*.js.map
 
 # Runtime data
