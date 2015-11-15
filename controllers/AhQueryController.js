@@ -1,9 +1,18 @@
+/// <reference path="../typings/tsd.d.ts"/>
+var AuctionQuery_1 = require("../services/AuctionQuery");
 var AhQueryController = (function () {
     function AhQueryController() {
     }
-    AhQueryController.get = function (req, res, next) {
+    AhQueryController.prototype.get = function (req, res, next) {
+        var auctionQuery = new AuctionQuery_1.AuctionQuery();
         console.log("AhQueryController GET");
-        res.send("w00t");
+        auctionQuery.getAuctions(function (error, response) {
+            if (error) {
+                console.log("There was an error in the get");
+                res.send(500);
+            }
+            res.send(response);
+        });
         return next();
     };
     return AhQueryController;

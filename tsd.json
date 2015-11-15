@@ -16,6 +16,9 @@
     },
     "bunyan/bunyan.d.ts": {
       "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "nconf/nconf.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
     }
   }
 }

@@ -1,7 +1,0 @@
-{
-  "db": {
-    "config": {
-      "host": "prod-db-server"
-    }
-  }
-}
