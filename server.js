@@ -15,4 +15,4 @@ server.listen(3000, function () {
 });
 var ahQueryController = new AhQueryController_1.AhQueryController();
 server.get("/auctions", ahQueryController.get);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=server.js.map

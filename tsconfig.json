@@ -4,7 +4,7 @@
         "module" : "commonjs"
     },
     "files": [
-        "app.ts",
+        "server.ts",
         "controllers/**/*.ts",
         "typings/tsd.d.ts",
         "typings/**/*.d.ts"

@@ -20,4 +20,4 @@ var Config = (function () {
     return Config;
 })();
 exports.Config = Config;
-//# sourceMappingURL=Config.js.map
+//# sourceMappingURL=config.js.map
