@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts"/>
+/// <reference path="../../typings/tsd.d.ts"/>
 /// <reference path="IAuctionQuery"/>
 var mongoose = require("mongoose");
 var auctionQueryFilesSchema = new mongoose.Schema({

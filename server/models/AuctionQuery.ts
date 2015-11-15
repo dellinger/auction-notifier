@@ -1,4 +1,5 @@
-/// <reference path="../typings/tsd.d.ts"/>
+/// <reference path="../../typings/tsd.d.ts"/>
+
 /// <reference path="IAuctionQuery"/>
 
 import * as mongoose from "mongoose";

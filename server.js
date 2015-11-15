@@ -1,7 +1,7 @@
 /// <reference path="./typings/tsd.d.ts"/>
-/// <reference path="./controllers/AhQueryController.ts"/>
-/// <reference path="./config/Config.ts"/>
-var AhQueryController_1 = require("./controllers/AhQueryController");
+/// <reference path="server/controllers/AhQueryController.ts"/>
+/// <reference path="config/Config.ts"/>
+var AhQueryController_1 = require("./server/controllers/AhQueryController");
 var Config_1 = require("./config/Config");
 var mongoose = require('mongoose');
 var restify = require('restify');
@@ -12,7 +12,6 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.listen(3000, function () {
     console.log("Server started @ 3000");
-    config.get('bnet_api');
 });
 mongoose.connect(config.get('db_uri'), {}, function (one) {
     console.log("Mongo connected");

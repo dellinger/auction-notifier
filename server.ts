@@ -1,8 +1,8 @@
 /// <reference path="./typings/tsd.d.ts"/>
-/// <reference path="./controllers/AhQueryController.ts"/>
-/// <reference path="./config/Config.ts"/>
+/// <reference path="server/controllers/AhQueryController.ts"/>
+/// <reference path="config/Config.ts"/>
 
-import {AhQueryController} from "./controllers/AhQueryController";
+import {AhQueryController} from "./server/controllers/AhQueryController";
 import {Config} from "./config/Config";
 
 var mongoose = require('mongoose');
@@ -17,7 +17,6 @@ server.use(restify.bodyParser());
 
 server.listen(3000, () => {
   console.log("Server started @ 3000");
-  config.get('bnet_api');
 });
 
 
