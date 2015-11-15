@@ -1,16 +1,19 @@
 /// <reference path="../typings/tsd.d.ts"/>
-var AuctionQuery_1 = require("../services/AuctionQuery");
+var AuctionQuerySvc_1 = require("../services/AuctionQuerySvc");
+var AuctionQuery = require("../models/AuctionQuery");
 var AhQueryController = (function () {
     function AhQueryController() {
     }
     AhQueryController.prototype.get = function (req, res, next) {
-        var auctionQuery = new AuctionQuery_1.AuctionQuery();
+        var auctionQuerySvc = new AuctionQuerySvc_1.AuctionQuerySvc();
         console.log("AhQueryController GET");
-        auctionQuery.getAuctions(function (error, response) {
+        auctionQuerySvc.getAuctions(function (error, response) {
             if (error) {
                 console.log("There was an error in the get");
                 res.send(500);
             }
+            var auctionQuery = new AuctionQuery(response);
+            auctionQuery.save();
             res.send(response);
         });
         return next();
