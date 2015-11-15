@@ -24,6 +24,7 @@
     "battlenet-api": "^0.11.0",
     "bookshelf": "^0.9.1",
     "config": "^1.16.0",
+    "gulp-typescript": "^2.9.2",
     "knex": "^0.9.0",
     "koa": "^2.0.0-alpha.3",
     "mongoose": "^4.2.5",

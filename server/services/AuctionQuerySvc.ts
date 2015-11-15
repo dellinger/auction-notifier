@@ -9,7 +9,7 @@ export class AuctionQuerySvc {
 
     constructor(){
         let config = new Config();
-        this.apiKey = config.get("bnet_api");
+        this.apiKey = config.get("BATTLE_NET_API_KEY");
         if(!this.apiKey){
             throw new Error("Battle net api key has not been provided");
         }
