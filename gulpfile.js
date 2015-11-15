@@ -14,7 +14,7 @@ gulp.task('tsd', function (callback) {
 });
 
 gulp.task('scripts', function() {
-    var tsResult = tsProject.src() // instead of gulp.src(...)
+    var tsResult = tsProject.src()
         .pipe(ts(tsProject));
 
     return tsResult.js.pipe(gulp.dest('dist'));

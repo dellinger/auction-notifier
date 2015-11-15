@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "module" : "commonjs",
-        "sourceMap": true
+        "sourceMap": true,
+        "listFiles":true,
+        "sourceRoot": "server/"
     },
     "exclude": [
         "node_modules"
