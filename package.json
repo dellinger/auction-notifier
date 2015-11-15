@@ -1,27 +1,30 @@
 {
-  "name": "auction-notifier",
+  "name": "auction-notifier-node",
   "version": "0.0.0",
-  "private": true,
+  "description": "[![Build Status](https://travis-ci.org/dellinger/auction-notifier.svg?branch=master)](https://travis-ci.org/dellinger/auction-notifier)  [![Project Dependencies](https://david-dm.org/dellinger/auction-notifier.svg)](https://david-dm.org/dellinger/auction-notifier)",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "battlenet-api": "^0.9.3",
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "dotenv": "^1.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "moment": "^2.10.3",
-    "morgan": "~1.6.1",
-    "request": "^2.58.0",
-    "serve-favicon": "~2.3.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dellinger/auction-notifier-node.git"
   },
+  "author": "David Ellinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dellinger/auction-notifier-node/issues"
+  },
+  "homepage": "https://github.com/dellinger/auction-notifier-node",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-jshint": "^1.11.2",
-    "gulp-live-server": "0.0.23",
-    "gulp-ng-constant": "^0.3.0"
+    "gulp-tsd": "0.0.4"
+  },
+  "dependencies": {
+    "battlenet-api": "^0.11.0",
+    "config": "^1.16.0",
+    "koa": "^2.0.0-alpha.3",
+    "nconf": "^0.8.2",
+    "restify": "^4.0.3"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "config/config.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "restify/restify.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "bunyan/bunyan.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "nconf/nconf.d.ts": {
+      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    }
+  }
+}
