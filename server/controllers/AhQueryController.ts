@@ -14,6 +14,7 @@ export class AhQueryController {
         var auctionQuerySvc = new AuctionQuerySvc();
         console.log("AhQueryController GET");
         auctionQuerySvc.getAuctionQuery( (error, response) => {
+            //TODO: Fix this, it shouldn't be saving here anymore. That was just a prototype
             if(error){
                 console.log("There was an error in the get");
                 res.send(500);

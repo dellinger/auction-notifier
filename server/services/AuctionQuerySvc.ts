@@ -28,9 +28,19 @@ export class AuctionQuerySvc {
         });
     }
 
-    public parseAuctionQueryResults(results: any,callback : (error, response) => void) {
-        console.log("getAuctionQuery call");
-
+    public parseAuctionQuery(results: any,callback : (error, response) => void) {
+        console.log("Saving Auction Query");
+        let auctionQuery = new AuctionQuery(results);
+        auctionQuery.save(error => {
+            if(err){
+                console.error("Could not save Auction Query Results");
+            } else {
+                //TODO: Create a parse auction query results function.
+                // Think about the model a bit more to see if that is what I want
+                parseAuctionQueryResults()
+            }
+        })
+        //TODO: Do something with the auction results (save them?)
     }
 
 }
